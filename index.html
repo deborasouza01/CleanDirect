@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DS Disque Faxina</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        /* do body e fundo */
+        body {
+            background: url('../sistemaagendamento/img/madeira.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        /* Csuavidade */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.5);
+            z-index: -1;
+        }
+
+        /* botão do WhatsApp */
+        #whatsapp-botao {
+            display: inline-block;
+            background-color: #25d366; /* Cor do botão do WhatsApp */
+            color: white;
+            padding: 15px 30px; /* Tamanho maior do botão */
+            border-radius: 50px; /* Borda arredondada */
+            font-size: 1.25rem; /* Tamanho da fonte */
+            font-weight: bold; /* Negrito para dar destaque */
+            text-decoration: none;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para dar destaque */
+            transition: all 0.3s ease-in-out; /* Transição suave para efeitos */
+        }
+
+        #whatsapp-botao:hover {
+            background-color: #128c7e; /* Cor mais escura ao passar o mouse */
+            transform: scale(1.1); /* Aumenta o botão qnd o mouse */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Sombra maior qnd passar o mouse */
+        }
+
+        #whatsapp-botao:active {
+            background-color: #075e54; /* cor mais escura quando passa mouse */
+            transform: scale(1.05); /* diminuir um cado p dar efeio clique*/
+        }
+
+        /* conteúdo principal */
+        .content {
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Estilos das caixinhas de serviços */
+        .service-card {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: scale(1.05);
+        }
+
+        /* Estilo d caixa de chat */
+        .chat-box {
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        /*  mensagens do chat */
+        .message {
+            background: #25d366;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 20px;
+            margin: 10px 0;
+            display: inline-block;
+            max-width: 80%;
+            position: relative;
+        }
+
+        .message::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: -10px;
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid #25d366;
+            border-top: 10px solid #25d366;
+            border-bottom: 10px solid transparent;
+        }
+
+        /* Estilos d campo de entrada de mensagens */
+        .input-box {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .input-box input {
+            flex: 1;
+            padding: 10px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+        }
+
+        .input-box button {
+            background: #25d366;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        /* Estilos d seção sobre mim */
+        .about-me {
+            background-color: #f0f0f0; /* Cor de fundo */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px; /* Espaço embaixo para separar da próxima seção */
+        }
+
+        /* Estilos para o rodapé fixo */
+        footer {
+            position: fixed;  /* Fixar o rodapé na tela */
+            bottom: 0;        /* Colocar o rodapé na parte inferior da página */
+            left: 0;          /* pra ele ocupar largura toda */
+            width: 100%;      /* O rodapé ocupar toda a largura da tela */
+            background-color: rgba(236, 12, 180, 0.973); /* Cor do rodape*/
+            color: white;     /* Cor do texto */
+            text-align: center;  /* Centraliza o texto */
+            padding: 0.1px 0;  /* Espaçamento interno */
+            font-size: 1rem;  /* Tamanho da fonte */
+            z-index: 100;     /* rodapé fique acima de outros elementos */
+        }
+
+    </style>
+</head>
+<body>
+
+    <section class="flex flex-col items-center justify-center min-h-screen px-6 py-12 content">
+        <div class="text-center mb-12">
+            <h1 class="text-5xl font-bold text-pink-400 mb-4">DS Disque Faxina</h1>
+            <p class="text-lg text-gray-700 mb-4">Profissionalismo e dedicação na limpeza do seu lar!</p>
+            <a id="whatsapp-botao" 
+               href="https://web.whatsapp.com/send?phone=5521991761959&text=Olá, gostaria de agendar um horário" 
+               target="_blank"
+               class="btn-whatsapp">
+                Agendar via WhatsApp
+            </a>
+        </div>
+
+        <div class="md:w-3/4 about-me">
+            <h2 class="text-3xl font-semibold text-pink-400 mb-4">Sobre Mim</h2>
+            <div class="flex justify-center mb-6">
+               <!--<img src="" alt="Imagem sobre mim" class="profile-img">-->
+            </div>
+            <p class="text-lg text-gray-800 leading-relaxed mb-4">Me chamo Danielle, mãe de três filhas que são a minha maior motivação. Comecei a fazer faxinas para pagar o aluguel, atendendo amigos e conhecidos. Com o tempo, fui conquistando a confiança de várias famílias e, hoje, tenho a satisfação de oferecer um serviço de qualidade para diversos clientes.</p>
+            <p class="text-lg text-gray-800 leading-relaxed mb-4">O que torna meu trabalho único é a atenção aos detalhes e o carinho que coloco em cada ambiente.</p>
+        </div>
+
+        <div class="md:w-3/4 text-center mb-12">
+            <h2 class="text-3xl font-semibold text-pink-400 mb-6">Serviços Oferecidos</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="service-card"><h3>Residencial</h3><p>Limpeza completa de todos os cômodos da sua casa.</p></div>
+                <div class="service-card"><h3>Faxina Pós-Obra</h3><p>Limpeza pesada após reformas.</p></div>
+                <div class="service-card"><h3>Limpeza de Janelas</h3><p>Produtos especializados para janelas impecáveis.</p></div>
+                <div class="service-card"><h3>Limpeza de Estofados</h3><p>Remoção de sujeira e odores de sofás e colchões.</p></div>
+                <div class="service-card"><h3>Limpeza de Tapetes</h3><p>Higienização profunda de tapetes e carpetes.</p></div>
+            </div>
+        </div>
+
+        <div class="chat-box">
+            <h2 class="text-3xl font-semibold text-pink-400 mb-4">Comentários</h2>
+            <div id="chat-messages">
+                <div class="message">Ótimo serviço, muito profissional!</div>
+                <div class="message">Minha casa ficou impecável, recomendo!</div>
+            </div>
+            <div class="input-box">
+                <input type="text" id="user-message" placeholder="Deixe seu comentário...">
+                <button onclick="sendMessage()">Enviar</button>
+            </div>
+        </div>
+
+        <!--<footer class="text-center mt-12">
+            <p class="text-lg text-gray-700">Horário de Atendimento: 7h às 18h</p>
+        </footer><-->
+    </section>
+
+    <script>
+        function sendMessage() {
+            const input = document.getElementById("user-message");
+            const messageText = input.value.trim();
+            if (messageText) {
+                const messageDiv = document.createElement("div");
+                messageDiv.classList.add("message");
+                messageDiv.textContent = messageText;
+                document.getElementById("chat-messages").appendChild(messageDiv);
+                input.value = "";
+            }
+        }
+    </script>
+
+    <footer>
+        HORÁRIO DE ATENDIMENTO: SEGUNDA A SEXTA 08:00 AS 18:00 HORAS
+        <p>© 2025 DS Disque faxina. Todos os direitos reserv
