@@ -33,7 +33,7 @@ Com muita pesquisa e prática, consegui superar esses desafios e entregar um sis
 2. **Entre na pasta do projeto**:
    - Depois de clonar, entre na pasta do projeto com o comando:
      ```bash
-     cd nome-do-repositorio
+     cd CleanDirect
      ```
 
 3. **Abra o arquivo no navegador**:
