@@ -27,7 +27,7 @@ Com muita pesquisa e prática, consegui superar esses desafios e entregar um sis
 1. **Clone o repositório**:
    - Primeiro, baixe o projeto para o seu computador. No terminal, digite:
      ```bash
-     git clone https://github.com/seu-usuario/nome-do-repositorio.git
+     git clone https://github.com/deborasouza01/CleanDirect.git
      ```
 
 2. **Entre na pasta do projeto**:
