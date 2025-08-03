@@ -10,7 +10,7 @@ Tailwind CSS: Estilização rápida e responsiva, adaptada pra mobile
 
 JavaScript: Modo escuro, comentários dinâmicos e geração automática do link do WhatsApp
 
-## Acesse o Ptojeto
+## Acesse o Projeto
 
 👉 [Clique aqui para acessar o projeto CleanDirect](https://deborasouza01.github.io/CleanDirect/)
 
